@@ -9,27 +9,15 @@ import './index.css';
 
 
 function App () {
- // const [letra, actualizarLetra] = useState ([]);
-
- // const [traducciones,cargarTraduccion]= useState([]);
-  
-
+ 
 
   const [preparacion,cargarPreparacion]=useState([]);
  
   
   
-  // const nuevasFrases = frase.filter(elegidas => frase.id ===1);
-  // cargarElegida (nuevasFrases);
+  
 
-
-  //const [frase, setFrase] = useState({});
-  const [fraseCero,setFrase0]= useState({});
-    const [fraseUno,setFrase1]= useState({});
-    const [fraseDos,setFrase2]=useState({});
-    const [fraseTres,setFrase3]= useState({});
-    const [fraseCuatro,setFrase4]=useState({});
-    const [fraseCinco,setFrase5]=useState({});
+  const [frase, setFrase] = useState([]);
   
    
   
@@ -48,14 +36,10 @@ function App () {
    
     const frases = await api.json();
     const frase=frases.drinks;
-   
     
-    setFrase0(frase[0]);
-   setFrase1(frase[1]);
-   setFrase2(frase[2]);
-   setFrase3(frase[3]);
-   setFrase4(frase[4]);
-   setFrase5(frase[5]);
+   
+    setFrase(frase);
+    
    console.log(frase);
    
 
@@ -100,8 +84,7 @@ function App () {
           <div  className="container
          text-center  bg-blue-400 hover:bg-blue-200  border-2 rounded mx-30 mt-1 border-blue-500 " >
             <Traducir
-           /*  traducciones={traducciones}
-            cargarTraduccion={cargarTraduccion} */
+           
             preparacion={preparacion}
             cargarPreparacion={cargarPreparacion}
             />
@@ -110,16 +93,24 @@ function App () {
      
         <li class="flex justify-center  gap-8 mt-1"> 
            <div className="grid grid-cols-1 gap-1 md:grid-cols-2 md:gap-2 lg:grid-cols-3 lg:gap-2  "> 
-              <Frase
-                fraseCero={fraseCero}
-                fraseUno={fraseUno}
-                fraseDos={fraseDos}
-                fraseTres={fraseTres}
-                fraseCuatro={fraseCuatro}
-                fraseCinco={fraseCinco}
+           {frase.map(fra => (
+              <Frase 
+                key = {fra.idDrink}
+                strDrinkThumb = {fra.strDrinkThumb}
+                strDrink = {fra.strDrink}
+                strIngredient1={fra.strIngredient1}
+                strIngredient2={fra.strIngredient2}
+                strIngredient3={fra.strIngredient3}
+                strInstructionsIT={fra.strInstructionsIT}
                 cargarPreparacion={cargarPreparacion}
                 preparacion={preparacion}
-                /> 
+
+                
+                id={fra.idDrink}
+                
+              />
+            ))}
+              
             </div>
         </li>   
     </ul> 
