@@ -43,7 +43,7 @@ const handleChange =(props) => {
   
     return ( 
         <Fragment>
-          <li class="flex justify-center mt-2">
+          <div class="flex ">
           <div className="container grid grid-cols-3 h-34 items-center aling-center
             text-center font-bold text-2xl bg-blue-400 hover:bg-blue-200  border-2 rounded  border-blue-500">
           <img src={bebida2} className="w-60 h-32 rounded-full mx-auto border border-purple-200 hover:border-transparent focus:outline-none "  alt="" width="384" height="600"/>
@@ -55,7 +55,7 @@ const handleChange =(props) => {
              
              <img src={bebida1} className="w-60 h-32 rounded-full mx-auto border border-purple-200 hover:border-transparent focus:outline-none "  alt="" width="384" height="600"/>
              </div>
-           </li>  
+           </div>  
 
              {/* <li class="flex justify-center mt-2">
              <div className="container 

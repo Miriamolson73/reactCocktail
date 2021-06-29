@@ -67,31 +67,40 @@ function App () {
   
   return (
     <Fragment >
-      <div > 
-      <ul >
-        <li>
-        <Encabezado
-        /* letra={letra}
-        actualizarLetra={actualizarLetra} */
-        bebida1={bebida1}
-        bebida2={bebida2}
-            
-            />
-        </li>
-    
+      <div className=" grid grid-cols-1   "> 
+      <div className="  mt-0 mx-8 w-full fixed ">
+     {/*  <ul >
         
-        <li class="flex justify-center  ">
-          <div  className="container
-         text-center  bg-blue-400 hover:bg-blue-200  border-2 rounded mx-30 mt-1 border-blue-500 " >
-            <Traducir
-           
-            preparacion={preparacion}
-            cargarPreparacion={cargarPreparacion}
-            />
-          </div> 
-        </li>
-     
-        <li class="flex justify-center  gap-8 mt-1"> 
+        <li> */}
+              <div>
+                <Encabezado
+              
+                  bebida1={bebida1}
+                  bebida2={bebida2}
+                      
+                />
+          {/*    </li> */}
+              </div> 
+              <div>
+             {/*  <div className="container
+            text-center  bg-blue-400 hover:bg-blue-200  border-2 rounded mx-30 mt-1 border-blue-500 "> */}
+          {/*  <div class="flex justify-center"> */}
+            {/* <li class="flex justify-center  ">  */}
+            {/*  <div  className="container
+            text-center  bg-blue-400 hover:bg-blue-200  border-2 rounded mx-30 mt-1 border-blue-500 " > */}
+                <Traducir
+              
+                preparacion={preparacion}
+                cargarPreparacion={cargarPreparacion}
+                />
+              </div> 
+         {/*  </div> */}
+        {/* // </li> */}
+      
+        </div>
+      
+        <div className="flex justify-center mt-60 gap-8 mt-1 static">
+        {/* <li class="flex justify-center  gap-8 mt-1">  */}
            <div className="grid grid-cols-1 gap-1 md:grid-cols-2 md:gap-2 lg:grid-cols-3 lg:gap-2  "> 
            {frase.map(fra => (
               <Frase 
@@ -112,9 +121,11 @@ function App () {
             ))}
               
             </div>
-        </li>   
-    </ul> 
-    </div>   
+            </div>
+            </div>
+        {/* </li>    */}
+    {/* </ul>  */}
+     
     </Fragment>
  
   );
